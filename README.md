@@ -1,31 +1,40 @@
-# Streamlit Seattle Weather dashboard
+# Shopping Behaviour Analysis Dashboard
 
-Just an example Streamlit dashboard exploring the classic Seattle Weather dataset.
+An interactive Streamlit dashboard for exploring customer shopping behaviour: what people buy, how much they spend, and how that changes with age and gender.
 
-## View it in one click
+## Features
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://demo-seattle-weather.streamlit.app/)
+- **Sidebar filters:** product category, gender, payment method and an age range (18 to 60 by default).
+- **Summary metrics:** total purchase amount, average purchase value, and the number of purchases by male and female customers.
+- **Three chart tabs:**
+  - *Category Analysis:* a bar chart of purchases in each product category.
+  - *Age Trends:* a line chart of the average purchase amount at each age.
+  - *Spending Behaviour:* a scatter plot of age against purchase amount, split by gender.
+- **Filtered data view:** an expandable table of the rows that match the current filters.
 
-## Try it on your machine
+Every metric and chart updates as you change the filters.
 
-1. Get the code:
+## Dataset
 
-   ```sh
-   $ git clone https://github.com/streamlit/demo-seattle-weather.git
-   ```
+`shopping_behavior_updated.csv` holds 3,900 customer purchases with 18 columns. These include age, gender, item and category, purchase amount (USD), location, season, review rating, subscription status, discount and promo code use, payment method and purchase frequency.
 
-2. Start a virtual environment and get the dependencies (requires uv):
+## Built with
 
-   ```sh
-   $ uv venv
+Python · Streamlit · pandas · Matplotlib
 
-   $ .venv/bin/activate
+## Run it locally
 
-   $ uv sync
-   ```
+You need Python 3.12.
 
-3. Start the app:
+```sh
+git clone https://github.com/kuheli7/shopping-behavior-dashboard.git
+cd shopping-behavior-dashboard
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-    ```sh
-    $ streamlit run streamlit_app.py
-    ```
+Then open the local address Streamlit prints, usually http://localhost:8501.
+
+## Credits
+
+Started from Streamlit's [Seattle Weather template](https://github.com/streamlit/demo-seattle-weather) and customised for this dataset. The template is licensed under Apache 2.0 (see [LICENSE](LICENSE)).
